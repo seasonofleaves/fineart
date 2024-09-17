@@ -22,18 +22,20 @@ async function getArt() {
 </script>
 
 <template>
-<div class="container">
-<section class="row">
-  <div class="col-12">
-    <h1>Artwork</h1>
+  <div class="container">
+    <section class="row">
+      <div class="col-12">
+        <h1>Artwork</h1>
+      </div>
+    </section>
+    <section class="row">
+      <div v-for="art in artworks" :key="art.id" class="col-3">
+        <div>
+          <img :src="art.imgUrlsSmall" :alt="`${art.description}`" class="img-fluid">
+        </div>
+      </div>
+    </section>
   </div>
-</section>
-<section class="row">
-<div v-for="art in artworks" :key="art.id" class="col-3">
-{{ art.description }}
-</div>
-</section>
-</div>
 </template>
 
 <style scoped lang="scss"></style>
