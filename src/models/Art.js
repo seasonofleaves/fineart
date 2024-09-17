@@ -1,6 +1,6 @@
 export class Art {
   constructor(data) {
-    this.slug = data.slug
+    this.slug = data.slug //alt description
     this.height = data.height
     this.width = data.width
     this.originalLink = data.originalLink

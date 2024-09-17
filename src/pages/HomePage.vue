@@ -1,7 +1,10 @@
 <script setup>
 import { artService } from "@/services/ArtService.js";
 import Pop from "@/utils/Pop.js";
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
+import { AppState } from "@/AppState.js";
+
+const artworks = computed(()=> AppState.art)
 
 onMounted(() => {
   getArt()
@@ -19,7 +22,16 @@ async function getArt() {
 </script>
 
 <template>
-<h1>Art</h1>
+<div class="container">
+<section class="row">
+  <div class="col-12">
+    <h1>Artwork</h1>
+  </div>
+</section>
+<section class="row">
+{{ artworks }}
+</section>
+</div>
 </template>
 
 <style scoped lang="scss"></style>
