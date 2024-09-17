@@ -29,7 +29,9 @@ async function getArt() {
   </div>
 </section>
 <section class="row">
-{{ artworks }}
+<div v-for="art in artworks" :key="art.id" class="col-3">
+{{ art.description }}
+</div>
 </section>
 </div>
 </template>

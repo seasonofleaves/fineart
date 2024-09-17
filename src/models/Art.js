@@ -1,5 +1,6 @@
 export class Art {
   constructor(data) {
+    this.id = data.id
     this.slug = data.slug //alt description
     this.height = data.height
     this.width = data.width
