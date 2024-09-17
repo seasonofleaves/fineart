@@ -3,6 +3,7 @@ import { artService } from "@/services/ArtService.js";
 import Pop from "@/utils/Pop.js";
 import { computed, onMounted } from 'vue';
 import { AppState } from "@/AppState.js";
+import ArtCard from "@/components/globals/ArtCard.vue";
 
 const artworks = computed(()=> AppState.art)
 
@@ -22,6 +23,7 @@ async function getArt() {
 </script>
 
 <template>
+  
   <div class="container">
     <section class="row">
       <div class="col-12">
@@ -30,9 +32,7 @@ async function getArt() {
     </section>
     <section class="row">
       <div v-for="art in artworks" :key="art.id" class="col-3">
-        <div>
-          <img :src="art.imgUrlsSmall" :alt="`${art.description}`" class="img-fluid">
-        </div>
+       <ArtCard :art-prop="art" />
       </div>
     </section>
   </div>
