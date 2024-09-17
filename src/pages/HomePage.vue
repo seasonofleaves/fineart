@@ -21,8 +21,12 @@ async function getArt() {
   }
 }
 
-function changePage(pageNumber){
-  console.log('Moving to page:', pageNumber)
+async function changePage(pageNumber){
+  try {
+    await artService.changeArtPage(pageNumber)
+  } catch (error) {
+    Pop.error(error)
+  }
 }
 
 </script>
