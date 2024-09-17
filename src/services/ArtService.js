@@ -8,6 +8,9 @@ class ArtService {
     console.log('Got Artwork - ArtService', response.data)
     const newArt = response.data.artworks.map(artPOJO => new Art(artPOJO))
     AppState.art = newArt
+
+    AppState.currentPage = response.data.page
+    AppState.totalPages = response.data.pages
   }
 }
 
